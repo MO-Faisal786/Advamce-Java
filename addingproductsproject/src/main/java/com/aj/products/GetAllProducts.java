@@ -26,11 +26,37 @@ public class GetAllProducts extends HttpServlet {
 			ResultSet products = db.getProducts();
 			if (products != null) {
 				pd.print("<h1 align=\"center\">All Products Lists...</h1>");
+				pd.print("<table align=\"center\" style=\"border: 1px solid black; border-collapse: collapse;\">"
+
+						+ "<thead>" 
+						+ "   <tr>"
+						+ "     <th style=\"border: 1px solid black; border-collapse: collapse;\">Product Name</th>"
+						+ "     <th style=\"border: 1px solid black; border-collapse: collapse;\">Company Name</th>"
+						+ "     <th style=\"border: 1px solid black; border-collapse: collapse;\">Type of Product</th>"
+						+ "     <th style=\"border: 1px solid black; border-collapse: collapse;\">Price</th>"
+						+ "		<th style=\"border: 1px solid black; border-collapse: collapse;\">Details</th>"
+						+ "		<th style=\"border: 1px solid black; border-collapse: collapse;\">Update</th>"
+						+ "		<th style=\"border: 1px solid black; border-collapse: collapse;\">Delete</th>"
+						+ "   </tr>" 
+						+ "</thead>");
 				while (products.next()) {
-					pd.print("<h3>" + products.getString("prod_name") + " " + products.getString("comp_name") + " "
-							+ products.getString("type") + " " + products.getDouble("prod_price") + " "
-							+ products.getString("prod_details") + "</h3>");
+					pd.print("<tbody> <tr>" + "<td style=\"border: 1px solid black; border-collapse: collapse;\">"
+							+ products.getString("prod_name") + "</td>" + " "
+							+ "<td style=\"border: 1px solid black; border-collapse: collapse;\">"
+							+ products.getString("comp_name") + "</td>" + " "
+							+ "<td style=\"border: 1px solid black; border-collapse: collapse;\">"
+							+ products.getString("type") + "</td>" + " "
+							+ "<td style=\"border: 1px solid black; border-collapse: collapse;\">"
+							+ products.getDouble("prod_price") + "</td>" + " "
+							+ "<td style=\"border: 1px solid black; border-collapse: collapse;\">"
+							+ products.getString("prod_details") + "</td>"
+							+ "<td style=\"border: 1px solid black; border-collapse: collapse;\"><a href='UpdateServlet1?id="+products.getInt("id")+"'>Update</a></td>"
+							+ "<td style=\"border: 1px solid black; border-collapse: collapse;\"><a href='DeleteServlet?id="+products.getInt("id")+"'>Delete</a></td>"
+
+							+ "</tr></tbody>");
 				}
+
+				pd.print("</table>");
 			} else {
 				pd.print("<h1>No products found...</h>");
 			}
