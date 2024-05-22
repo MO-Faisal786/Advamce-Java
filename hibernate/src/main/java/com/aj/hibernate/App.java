@@ -38,7 +38,7 @@ public class App {
 		session.delete(product);
 		session.beginTransaction().commit();
 		
-		session.close();
-		sf.close();
+		session.close(); // close the seesion
+		sf.close(); // close the session factory
 	}
 }
