@@ -7,19 +7,12 @@
 	<hibernate-configuration>
 		<session-factory>
 			<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-			<property name="connection.url">jdbc:mysql://localhost:3306/test</property>
+			<property name="connection.url">jdbc:mysql://localhost:3306/account_details</property>
 			<property name="connection.username">root</property>
 			<property name="connection.password">faisal1234</property>
 			<property name="hbm2ddl.auto">update</property>
-			<property name="show_sql">true</property>
-			<mapping class="com.aj.hibernate.Product"/>
-			<mapping class="com.aj.hibernate.CountryDTO"/>
-			<mapping class="com.aj.hibernate.PMDTO"/>
-			<mapping class="com.aj.hibernate.Vender"/>
-			<mapping class="com.aj.hibernate.Customer"/>
-			<mapping class="com.aj.hibernate.Student"/>
-			<mapping class="com.aj.hibernate.Teacher"/>
-			<mapping class="com.aj.hibernate.Docter"/>
-			<mapping class="com.aj.hibernate.Patient"/>
+			<!-- <property name="show_sql">true</property> -->
+			<mapping class="com.aj.DTOs.AccountDetailsDTO"/>
+			
 		</session-factory>
 	</hibernate-configuration>
