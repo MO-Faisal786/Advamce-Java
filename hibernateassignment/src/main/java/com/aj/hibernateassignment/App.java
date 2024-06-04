@@ -1,6 +1,6 @@
 package com.aj.hibernateassignment;
 
-import com.aj.DB.DB;
+import com.aj.db.DB;
 
 
 

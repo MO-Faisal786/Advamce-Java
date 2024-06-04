@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <context:component-scan base-package="com.aj.di"/>
+    <!-- <bean class="com.aj.Demo">
+        By using setter method
+        <property name="id" value="101"/>
+        <property name="name" value="faisal"/>
+        
+        By using constructor 
+        <constructor-arg value="101"/>
+        <constructor-arg value="faisal"/>
+    </bean> -->
+
+    <!-- <bean id="en" class="com.aj.di.Engine"/> -->
+    <!-- <bean class="com.aj.di.Car">
+        by using setter
+        <property name="name" value="BMW"/>
+        <property name="engine" ref="en"/>
+
+        by using constructor 
+        <constructor-arg value="BMW"/>
+        <constructor-arg ref="en"/>
+    </bean> -->
+        
+   
+</beans>
